@@ -1,7 +1,7 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-const ComponentsAndProps = () => {
+const Details = () => {
   return (
     <View>
       <Text>ComponentsAndProps</Text>
@@ -14,4 +14,4 @@ const ComponentsAndProps = () => {
   );
 };
 
-export default ComponentsAndProps;
+export default Details;

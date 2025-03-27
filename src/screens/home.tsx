@@ -6,8 +6,8 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React from "react";
-import "./home.style";
-import { styles } from "./home.style";
+import "./Home.style";
+import { styles } from "./Home.style";
 import { useNavigation } from "@react-navigation/native";
 import {
   NativeStackNavigationProp,

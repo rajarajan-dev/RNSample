@@ -2,8 +2,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import "./gesture-handler";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import Home from "./src/screens/home";
-import ComponentsAndProps from "./src/screens/ComponentsAndProps";
+import Home from "./src/screens/Home";
+import ComponentsAndProps from "./src/screens/Details";
 
 export type RootStackParamList = {
   Home: undefined;

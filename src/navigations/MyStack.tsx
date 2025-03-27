@@ -1,10 +1,10 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import Home from "../screens/home";
-import ComponentsAndProps from "../screens/ComponentsAndProps";
+import Home from "../screens/Home";
+import Details from "../screens/Details";
 
 export const MyStack = createStackNavigator({
   screens: {
     Home: Home,
-    Details: ComponentsAndProps,
+    Details: Details,
   },
 });
