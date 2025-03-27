@@ -21,6 +21,7 @@ const Home: React.FC<HomeScreenProps> = (prop) => {
   const navigation =
     useNavigation<NativeStackNavigationProp<RootStackParamList, "Home">>();
   const challenges = [
+    "Redux-Example-One",
     "Components and Props",
     "State Management",
     "Navigation",
@@ -33,13 +34,20 @@ const Home: React.FC<HomeScreenProps> = (prop) => {
     "Testing",
   ];
 
-  const onHandleSelection = (item: string) => {
-    navigation.push("Details");
+  const onHandleSelection = (index: number) => {
+    switch (index) {
+      case 0:
+        navigation.push("ReduxExOne");
+        break;
+      default:
+        navigation.push("Details", { index });
+        break;
+    }
   };
 
-  const renderItem = ({ item }: { item: string }) => {
+  const renderItem = ({ item, index }: { item: string; index: number }) => {
     return (
-      <TouchableOpacity onPress={() => onHandleSelection(item)}>
+      <TouchableOpacity onPress={() => onHandleSelection(index)}>
         <Text style={styles.listItem}>{item}</Text>
       </TouchableOpacity>
     );
