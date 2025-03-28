@@ -3,7 +3,6 @@ import { Product } from "../../types/Products";
 import styles from "./ProductItem.style";
 
 const ProductItem = ({ item }: { item: Product }) => {
-  console.log("Item " + item);
   return (
     <View style={styles.container}>
       <Image source={{ uri: item.image }} style={styles.image} />

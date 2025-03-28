@@ -2,15 +2,14 @@ import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 import { Product } from "../types/Products";
 import { RootState } from "./store";
 
-// Define API state
-interface ApiState {
+interface ProductsState {
   data: Product[];
   loading: boolean;
   error: string | null;
 }
 
 // Initial state
-const initialState: ApiState = {
+const initialState: ProductsState = {
   data: [],
   loading: false,
   error: null,
@@ -18,7 +17,7 @@ const initialState: ApiState = {
 
 // Async thunk to fetch products
 export const fetchProducts = createAsyncThunk<Product[]>(
-  "api/fetchProducts",
+  "products/fetchProducts",
   async (_, { rejectWithValue }) => {
     try {
       const response = await fetch("https://fakestoreapi.com/products");
@@ -31,8 +30,8 @@ export const fetchProducts = createAsyncThunk<Product[]>(
 );
 
 // Create slice
-const apiSlice = createSlice({
-  name: "api",
+const productsSlice = createSlice({
+  name: "products",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -56,6 +55,6 @@ const apiSlice = createSlice({
 });
 
 // Selector
-export const selectApiState = (state: RootState) => state.api;
+export const selectProductsState = (state: RootState) => state.productsSlice; 
 
-export default apiSlice.reducer;
+export default productsSlice.reducer;

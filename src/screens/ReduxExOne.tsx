@@ -5,13 +5,13 @@ import ProductItem from "../components/ReduxExOne/ProductItem";
 import ItemSeparator from "../components/ReduxExOne/ItemSeparator";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { fetchProducts, selectApiState } from "../store/apiSlice";
+import { fetchProducts, selectProductsState } from "../store/productsSlice";
 import { RootStackParamList } from "../navigation/AppNavigator";
 import { useAppDispatch, useAppSelector } from "../hooks/stateManagementHooks";
 
 const ReduxExOne = () => {
   const dispatch = useAppDispatch();
-  const { data, loading, error } = useAppSelector(selectApiState);
+  const { data, loading, error } = useAppSelector(selectProductsState);
 
   useEffect(() => {
     dispatch(fetchProducts());

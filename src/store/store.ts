@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import apiReducer from "./apiSlice";
+import productsSlice from "./productsSlice";
 
 export const store = configureStore({
   reducer: {
-    api: apiReducer,
+    productsSlice: productsSlice,
   },
 });
 
