@@ -13,7 +13,7 @@ import {
   NativeStackNavigationProp,
   NativeStackScreenProps,
 } from "@react-navigation/native-stack";
-import { RootStackParamList } from "../../App";
+import { RootStackParamList } from "../navigation/AppNavigator";
 
 type HomeScreenProps = NativeStackScreenProps<RootStackParamList, "Home">;
 
