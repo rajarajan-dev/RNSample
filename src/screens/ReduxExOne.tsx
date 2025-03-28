@@ -6,8 +6,8 @@ import ItemSeparator from "../components/ReduxExOne/ItemSeparator";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { fetchProducts, selectApiState } from "../store/apiSlice";
-import { useAppDispatch, useAppSelector } from "../hooks/StateManagementHooks";
 import { RootStackParamList } from "../navigation/AppNavigator";
+import { useAppDispatch, useAppSelector } from "../hooks/stateManagementHooks";
 
 const ReduxExOne = () => {
   const dispatch = useAppDispatch();
