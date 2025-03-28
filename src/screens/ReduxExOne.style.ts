@@ -7,10 +7,11 @@ const styles = StyleSheet.create({
   },
   cartContainer: {
     marginBottom: 5,
+    flexDirection: "row",
+    justifyContent: "flex-end",
   },
   cartLabel: {
     textAlign: "right",
-    marginRight: 5,
     fontSize: 15,
     fontWeight: "600",
     textTransform: "uppercase",
