@@ -1,7 +1,7 @@
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
 import styles from "./MyCheckList.style";
-import AddIcon from "../icons/AddIcon";
+import AddIcon from "../assets/icons/addicon.svg";
 
 const MyCheckList = () => {
   return (
@@ -12,7 +12,20 @@ const MyCheckList = () => {
           Create your own personal checklist
         </Text>
       </View>
-      <AddIcon height={100} width={200} />
+
+      <TouchableOpacity
+        style={{
+          alignItems: "center",
+          justifyContent: "center",
+          width: 100,
+          position: "absolute",
+          bottom: 30,
+          right: 10,
+          height: 100,
+        }}
+      >
+        <AddIcon width={70} height={70} />
+      </TouchableOpacity>
     </View>
   );
 };
