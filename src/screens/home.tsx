@@ -22,6 +22,8 @@ const Home: React.FC<HomeScreenProps> = (prop) => {
     useNavigation<NativeStackNavigationProp<RootStackParamList, "Home">>();
   const challenges = [
     "Redux-Example-One",
+    "Redux-Example-Two",
+    "Redux-Example-Three",
     "Components and Props",
     "State Management",
     "Navigation",
@@ -38,6 +40,12 @@ const Home: React.FC<HomeScreenProps> = (prop) => {
     switch (index) {
       case 0:
         navigation.push("ReduxExOne");
+        break;
+      case 1:
+        navigation.push("Pizza");
+        break;
+      case 2:
+        navigation.push("Burger");
         break;
       default:
         navigation.push("Details", { index });
