@@ -24,6 +24,7 @@ const Home: React.FC<HomeScreenProps> = (prop) => {
     "Redux-Example-One",
     "Redux-Example-Two",
     "Redux-Example-Three",
+    "My CheckList",
     "Components and Props",
     "State Management",
     "Navigation",
@@ -46,6 +47,9 @@ const Home: React.FC<HomeScreenProps> = (prop) => {
         break;
       case 2:
         navigation.push("Burger");
+        break;
+      case 3:
+        navigation.push("MyCheckList");
         break;
       default:
         navigation.push("Details", { index });

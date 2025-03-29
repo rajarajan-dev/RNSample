@@ -13,8 +13,10 @@ const pizzaSlice = createSlice({
   name: "pizza",
   initialState,
   reducers: {
-    orderPizza: (state) => {
-      state.pizzaBase--;
+    orderPizza: (state, action) => {
+      if (action.payload) {
+        state.pizzaBase -= action.payload;
+      }
     },
   },
 });

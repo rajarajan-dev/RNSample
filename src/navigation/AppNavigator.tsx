@@ -7,6 +7,7 @@ import Home from "../screens/Home";
 import ReduxExOne from "../screens/ReduxExOne";
 import Pizza from "../screens/Pizza";
 import Burger from "../screens/Burger";
+import MyCheckList from "../screens/MyCheckList";
 
 export type RootStackParamList = {
   Home: undefined;
@@ -15,6 +16,7 @@ export type RootStackParamList = {
   Cart: undefined;
   Pizza: undefined;
   Burger: undefined;
+  MyCheckList: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -22,13 +24,14 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="MyCheckList">
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Details" component={Details} />
         <Stack.Screen name="ReduxExOne" component={ReduxExOne} />
         <Stack.Screen name="Cart" component={Cart} />
         <Stack.Screen name="Pizza" component={Pizza} />
         <Stack.Screen name="Burger" component={Burger} />
+        <Stack.Screen name="MyCheckList" component={MyCheckList} />
       </Stack.Navigator>
     </NavigationContainer>
   );

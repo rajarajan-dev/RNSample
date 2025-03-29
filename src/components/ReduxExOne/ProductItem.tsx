@@ -1,5 +1,5 @@
 import { Button, Image, Text, View } from "react-native";
-import { Product } from "../../types/Products";
+import { Product } from "../../appTypes/Products";
 import styles from "./ProductItem.style";
 import { addToCart, removeFromCart } from "../../store/cartSlice";
 import { AppDispatch } from "../../store/store"; // Import AppDispatch type

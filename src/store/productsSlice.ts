@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
-import { Product } from "../types/Products";
+import { Product } from "../appTypes/Products";
 import { RootState } from "./store";
 
 interface ProductsState {
@@ -55,6 +55,6 @@ const productsSlice = createSlice({
 });
 
 // Selector
-export const selectProductsState = (state: RootState) => state.productsSlice; 
+export const selectProductsState = (state: RootState) => state.productsSlice;
 
 export default productsSlice.reducer;
