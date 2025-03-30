@@ -2,15 +2,15 @@ import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
 import styles from "./MyCheckList.style";
 import AddIcon from "../assets/icons/addicon.svg";
+import TextTitle from "../components/exercise/TextTitle";
+import TextSubTitle from "../components/exercise/TextSubTitle";
 
 const MyCheckList = () => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        <Text style={styles.headerTitle}>My Checklist</Text>
-        <Text style={styles.headerSubTitle}>
-          Create your own personal checklist
-        </Text>
+        <TextTitle title="My Checklist" />
+        <TextSubTitle title="Create your own personal checklist" />
       </View>
 
       <TouchableOpacity
