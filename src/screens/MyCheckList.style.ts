@@ -8,20 +8,10 @@ const styles = StyleSheet.create({
     color: Colors.nav30,
   },
   headerContainer: {},
-  headerTitle: {
-    fontFamily: Typography.fontFamily.medium,
-    fontSize: Typography.fontSizes.large,
-    color: Colors.black,
-    fontWeight: "400",
-    textTransform: "capitalize",
-  },
-  headerSubTitle: {
-    fontFamily: Typography.fontFamily.light,
-    fontSize: Typography.fontSizes.medium,
-    fontWeight: "400",
-    color: Colors.black,
-    marginTop: 4,
-    transform: [{ skewX: "-10deg" }],
+  ListRow: {
+    backgroundColor: Colors.white,
+    padding: 16,
+    marginTop: 10,
   },
 });
 export default styles;
