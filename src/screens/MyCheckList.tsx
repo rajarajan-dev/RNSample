@@ -1,13 +1,17 @@
-import { View, Text, TouchableOpacity, FlatList } from "react-native";
-import React from "react";
+import { View, Text, TouchableOpacity, FlatList, Modal } from "react-native";
+import React, { useState } from "react";
 import styles from "./MyCheckList.style";
 import AddIcon from "../assets/icons/addicon.svg";
 import TextSubTitle from "../components/exercise/TextSubTitle/TextSubTitle";
 import TextTitle from "../components/exercise/TextTitle/TextTitle";
 import { MyCheckListData } from "../components/exercise/types/CheckListTypes";
 import MyCheckListItem from "../components/exercise/MyCheckListItem/MyCheckListItem";
+import AddChecklist from "./AddChecklist";
+import useStatusBarHeight from "../hooks/useStatusBarHeight";
 
 const MyCheckList = () => {
+  const [modalVisible, setModalVisible] = useState(false);
+
   const checklistData: MyCheckListData = {
     MyCheckList: [
       {
@@ -16,61 +20,14 @@ const MyCheckList = () => {
         createdAt: "2023-11-15T14:30:22Z",
         lastItemAdded: "Milk",
         items: [
-          {
-            itemId: "item1",
-            name: "Milk",
-            status: "Todo",
-          },
-          {
-            itemId: "item2",
-            name: "Eggs",
-            status: "Done",
-          },
-          {
-            itemId: "item3",
-            name: "Bread",
-            status: "Todo",
-          },
-        ],
-      },
-      {
-        titleId: "title2",
-        titleName: "Work Tasks",
-        createdAt: "2023-11-15T14:30:22Z",
-        lastItemAdded: "Milk",
-        items: [
-          {
-            itemId: "item4",
-            name: "Finish React Native App",
-            status: "In Progress",
-          },
-          {
-            itemId: "item5",
-            name: "Meeting with Team",
-            status: "Todo",
-          },
-        ],
-      },
-      {
-        titleId: "title3",
-        titleName: "Personal Goals",
-        createdAt: "2023-11-15T14:30:22Z",
-        lastItemAdded: "Milk",
-        items: [
-          {
-            itemId: "item6",
-            name: "Read 30 pages",
-            status: "Done",
-          },
-          {
-            itemId: "item7",
-            name: "Workout for 30 mins",
-            status: "Todo",
-          },
+          { itemId: "item1", name: "Milk", status: "Todo" },
+          { itemId: "item2", name: "Eggs", status: "Done" },
+          { itemId: "item3", name: "Bread", status: "Todo" },
         ],
       },
     ],
   };
+
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
@@ -83,6 +40,7 @@ const MyCheckList = () => {
         renderItem={MyCheckListItem}
       />
 
+      {/* Floating Button to Open Modal */}
       <TouchableOpacity
         style={{
           alignItems: "center",
@@ -93,9 +51,20 @@ const MyCheckList = () => {
           right: 10,
           height: 100,
         }}
+        onPress={() => setModalVisible(true)}
       >
         <AddIcon width={70} height={70} />
       </TouchableOpacity>
+
+      {/* MODAL */}
+      <Modal
+        visible={modalVisible}
+        transparent
+        animationType="slide"
+        onRequestClose={() => setModalVisible(false)}
+      >
+        <AddChecklist setModalVisible={setModalVisible} />
+      </Modal>
     </View>
   );
 };

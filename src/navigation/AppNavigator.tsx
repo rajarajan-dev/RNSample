@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Cart from "../screens/Cart";
@@ -8,6 +8,7 @@ import ReduxExOne from "../screens/ReduxExOne";
 import Pizza from "../screens/Pizza";
 import Burger from "../screens/Burger";
 import MyCheckList from "../screens/MyCheckList";
+import AddChecklist from "../screens/AddChecklist";
 
 export type RootStackParamList = {
   Home: undefined;
